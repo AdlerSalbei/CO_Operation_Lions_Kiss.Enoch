@@ -7,6 +7,7 @@
 class GRAD_USER {
     class common {
         file = "USER\functions";
+        class addScreenAction {};
         class chairCircle {};
         class closingCredits {};
         class doLightning {};

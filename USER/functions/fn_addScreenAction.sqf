@@ -5,33 +5,48 @@ private _action = [
     "Remote Verbindung Herstellen",
     "",
     {
-        screen_1 setObjectTextureGlobal [0, "data\screen.paa"];
+        grad_uploadDone = true;
+        publicVariable "grad_uploadDone";
+
+        screen_01 setObjectTextureGlobal [0, "data\00.paa"];
+        screen_02 setObjectTextureGlobal [0, "data\00.paa"];
+
         [{
-            screen_1 setObjectTextureGlobal [0, "data\00.paa"];
+            screen_01 setObjectTextureGlobal [0, "data\10.paa"];
+            screen_02 setObjectTextureGlobal [0, "data\10.paa"];
+
             [{
-                screen_1 setObjectTextureGlobal [0, "data\10.paa"];
+                screen_01 setObjectTextureGlobal [0, "data\20.paa"];
+                screen_02 setObjectTextureGlobal [0, "data\20.paa"];
+
                 [{
-                    screen_1 setObjectTextureGlobal [0, "data\20.paa"];
+                    screen_01 setObjectTextureGlobal [0, "data\30.paa"];
+                    screen_02 setObjectTextureGlobal [0, "data\30.paa"];
+
                     [{
-                        screen_1 setObjectTextureGlobal [0, "data\30.paa"];
+                        screen_01 setObjectTextureGlobal [0, "data\40.paa"];
+                        screen_02 setObjectTextureGlobal [0, "data\40.paa"];
+
                         [{
-                            screen_1 setObjectTextureGlobal [0, "data\40.paa"];
+                            screen_01 setObjectTextureGlobal [0, "data\50.paa"];
+                            screen_02 setObjectTextureGlobal [0, "data\50.paa"];
+
                             [{
-                                screen_1 setObjectTextureGlobal [0, "data\50.paa"];
+                                screen_01 setObjectTextureGlobal [0, "data\60.paa"];
+                                screen_02 setObjectTextureGlobal [0, "data\60.paa"];
+
                                 [{
-                                    screen_1 setObjectTextureGlobal [0, "data\60.paa"];
-                                    [{
-                                        screen_1 setObjectTextureGlobal [0, "data\Done.paa"];
-                                    }, [], 10] call CBA_fnc_waitAndExecute;
-                                }, [], 10] call CBA_fnc_waitAndExecute;
-                            }, [], 10] call CBA_fnc_waitAndExecute;
-                        }, [], 10] call CBA_fnc_waitAndExecute;
-                    }, [], 10] call CBA_fnc_waitAndExecute;
-                }, [], 10] call CBA_fnc_waitAndExecute;
-            }, [], 10] call CBA_fnc_waitAndExecute;
-        }, [], 3] call CBA_fnc_waitAndExecute;
+                                    screen_01 setObjectTextureGlobal [0, "data\Done.paa"];
+                                    screen_02 setObjectTextureGlobal [0, "data\Done.paa"];
+                                }, [], 8] call CBA_fnc_waitAndExecute;
+                            }, [], 8] call CBA_fnc_waitAndExecute;
+                        }, [], 8] call CBA_fnc_waitAndExecute;
+                    }, [], 8] call CBA_fnc_waitAndExecute;
+                }, [], 8] call CBA_fnc_waitAndExecute;
+            }, [], 8] call CBA_fnc_waitAndExecute;
+        }, [], 8] call CBA_fnc_waitAndExecute;
     },
-    {true},
+    {isNil "grad_uploadDone" && {isNil "grad_serverDestroyed"} && {!(isNil "grad_serverStarted")}},
     {},
     [],
     [0,0,0]

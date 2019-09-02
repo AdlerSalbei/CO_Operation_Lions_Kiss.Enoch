@@ -18,6 +18,7 @@ class GRAD_USER {
         class playRadioSong {};
         class seatPlayers {};
         class selectRadioSound {};
+        class serverActions {};
         class setTimeAndWeather {};
     };
 };

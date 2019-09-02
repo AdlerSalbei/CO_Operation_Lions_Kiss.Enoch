@@ -63,7 +63,7 @@ ace_player switchMove "amovpercmstpslowwrfldnon";
                     params ["_camera"];
 
                     cutText ["","BLACK FADED", 999];
-                    titleText ["<t font='PuristaBold' size='3'>Am 28.09.2019 wurde ein NATO Truppentransport überfallen, die sich anboard befindenden Wissenschafftler wurden entführt.</t>", "PLAIN", 0.8, true, true];
+                    titleText ["<t font='PuristaBold' size='3'>Am 22.09.2019 wurde ein NATO Truppentransport überfallen, die sich anboard befindenden Wissenschafftler wurden entführt.</t>", "PLAIN", 0.8, true, true];
                     _camera camSetPos (getPos camPos_02);
                     _camera camSetTarget camTarget_01;
                     _camera camSetFov 0.1;
@@ -86,10 +86,10 @@ ace_player switchMove "amovpercmstpslowwrfldnon";
                             params ["_camera"];
 
                             [{[getPosATL lightningPos_01] call grad_user_fnc_doLightning;},[]] call CBA_fnc_execNextFrame;
-                            [{[getPosATL lightningPos_04] call grad_user_fnc_doLightning;},[],2] call CBA_fnc_waitAndExecute;
+                            [{[getPosATL lightningPos_04] call grad_user_fnc_doLightning;},[],4] call CBA_fnc_waitAndExecute;
 
                             _camera camSetFov 1;
-                            _camera camCommit 5;
+                            _camera camCommit 8;
 
                             [{
                                 params ["_camera"];
@@ -121,6 +121,8 @@ ace_player switchMove "amovpercmstpslowwrfldnon";
                                             camDestroy _camera;
 
                                             ["Default", 0, false] call BIS_fnc_setPPeffectTemplate;
+                                            GRAD_USER_introOver = true;
+                                            publicVariable "GRAD_USER_introOver";
 
                                             [{
                                                 cutText ["", "BLACK IN", 5];
@@ -143,8 +145,6 @@ ace_player switchMove "amovpercmstpslowwrfldnon";
                                                     10 fadeMusic 0;
                                                     STHud_UIMode = 1;
                                                     diwako_dui_main_toggled_off = false;
-                                                    GRAD_USER_introOver = true;
-                                                    publicVariable "GRAD_USER_introOver";
                                                     [ace_player, "amovpercmstpslowwrfldnon", 1] call ace_common_fnc_doAnimation;
 
                                                     [{
@@ -156,7 +156,7 @@ ace_player switchMove "amovpercmstpslowwrfldnon";
                                         }, _this, 1] call CBA_fnc_waitAndExecute;
                                     }, _this, 5] call CBA_fnc_waitAndExecute;
                                 }, _this, 5] call CBA_fnc_waitAndExecute;
-                            }, _this, 5] call CBA_fnc_waitAndExecute;
+                            }, _this, 8] call CBA_fnc_waitAndExecute;
                         }, _this, 2.9] call CBA_fnc_waitAndExecute;
                     }, _this, 8] call CBA_fnc_waitAndExecute;
                 }, _this, 3.9] call CBA_fnc_waitAndExecute;

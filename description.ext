@@ -90,6 +90,12 @@ class Params {
 //SOUNDS =======================================================================
 class CfgSounds {
 	#include "USER\userSounds.hpp"
+
+	class computerStartSound
+	{
+		name	= "computerStartSound";
+		sound[]	= { "data\computer_start.ogg", db + 0, 1.0 };
+	};
 };
 
 

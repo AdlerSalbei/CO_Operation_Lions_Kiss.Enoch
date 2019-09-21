@@ -15,7 +15,7 @@ private _number = 0;
 {
     if (!(isNull (getAssignedCuratorUnit _x)) && !(str _x in ["zeusModule_adminLogged", "zeusModule_adminVoted"])) then {
         _number = _number +1;
-        _return pushBack (format["Zeus %1: %2", _number, _x]);
+        _return pushBack (format["Zeus %1: %2", _number, name (getAssignedCuratorUnit _x)]);
     };
 }forEach allCurators;
 
@@ -37,7 +37,7 @@ _text pushBack (_headerText + "Helden des Abends");
 
 _return = [];
 
-private _groups = ["GetAllGroupsOfSide", [WEST]] call BIS_fnc_dynamicGroups;
+private _groups = ["GetAllGroupsOfSide", [WEST,EAST]] call BIS_fnc_dynamicGroups;
 
 {
     private _group = _x;

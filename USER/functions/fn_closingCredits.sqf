@@ -25,7 +25,7 @@ if (count _return > 1) then {
 };
 
 _text pushBack (_headerText + "Songs");
-_text pushBack (_bodyText + "Intro: Two Steps from Hell - Heart of Courage");
+_text pushBack (_bodyText + "Intro: Tac-Ops DLC: Ambient 2a");
 _text pushBack (_bodyText + "Outro: Two Steps from Hell - Victory");
 _text pushBack (_headerText + " ");
 
@@ -48,6 +48,11 @@ private _groups = ["GetAllGroupsOfSide", [WEST,EAST]] call BIS_fnc_dynamicGroups
             if (_description == "") then {
                 _description = getText(configFile >> "CfgVehicles" >> typeOf _x >> "displayName");
             };
+
+            private _split = _description splitString "@";
+            if (count _split > 1) then {
+                _description = _split select 0;
+            };
             _return pushBack (format ["%1: %2", _description, name _x]);
     }forEach (units _group);
 } forEach _groups;
@@ -65,7 +70,3 @@ private _fullText = _text joinString (_endStructuredText + _breakLine);
     1,
     -5
 ] spawn BIS_fnc_dynamicText;
-
-[{
-    cutText ["", "BLACK IN", 2];
-}, [], 20] call CBA_fnc_waitAndExecute;

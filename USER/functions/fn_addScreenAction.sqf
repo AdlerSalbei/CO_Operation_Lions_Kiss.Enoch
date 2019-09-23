@@ -9,35 +9,52 @@ private _action = [
         publicVariable "grad_uploadDone";
 
         screen_01 setObjectTextureGlobal [0, "data\00.paa"];
-        screen_02 setObjectTextureGlobal [0, "data\00.paa"];
+        if (grad_user_bigScreenOn) then {
+            screen_02 setObjectTextureGlobal [0, "data\00.paa"];
+        };
 
         [{
             screen_01 setObjectTextureGlobal [0, "data\10.paa"];
-            screen_02 setObjectTextureGlobal [0, "data\10.paa"];
+            if (grad_user_bigScreenOn) then {
+                screen_02 setObjectTextureGlobal [0, "data\10.paa"];
+            };
 
             [{
                 screen_01 setObjectTextureGlobal [0, "data\20.paa"];
-                screen_02 setObjectTextureGlobal [0, "data\20.paa"];
+                if (grad_user_bigScreenOn) then {
+                    screen_02 setObjectTextureGlobal [0, "data\20.paa"];
+                };
 
                 [{
                     screen_01 setObjectTextureGlobal [0, "data\30.paa"];
-                    screen_02 setObjectTextureGlobal [0, "data\30.paa"];
+                    if (grad_user_bigScreenOn) then {
+                        screen_02 setObjectTextureGlobal [0, "data\30.paa"];
+                    };
 
                     [{
                         screen_01 setObjectTextureGlobal [0, "data\40.paa"];
-                        screen_02 setObjectTextureGlobal [0, "data\40.paa"];
+                        if (grad_user_bigScreenOn) then {
+                            screen_02 setObjectTextureGlobal [0, "data\40.paa"];
+                        };
 
                         [{
                             screen_01 setObjectTextureGlobal [0, "data\50.paa"];
-                            screen_02 setObjectTextureGlobal [0, "data\50.paa"];
-
+                            if (grad_user_bigScreenOn) then {
+                                screen_02 setObjectTextureGlobal [0, "data\50.paa"];
+                            };
                             [{
                                 screen_01 setObjectTextureGlobal [0, "data\60.paa"];
-                                screen_02 setObjectTextureGlobal [0, "data\60.paa"];
-
+                                if (grad_user_bigScreenOn) then {
+                                    screen_02 setObjectTextureGlobal [0, "data\60.paa"];
+                                };
                                 [{
                                     screen_01 setObjectTextureGlobal [0, "data\Done.paa"];
-                                    screen_02 setObjectTextureGlobal [0, "data\Done.paa"];
+                                    if (grad_user_bigScreenOn) then {
+                                        screen_02 setObjectTextureGlobal [0, "data\Done.paa"];
+                                    };
+
+                                    "marker_9" setMarkerAlpha 1;
+
                                 }, [], 8] call CBA_fnc_waitAndExecute;
                             }, [], 8] call CBA_fnc_waitAndExecute;
                         }, [], 8] call CBA_fnc_waitAndExecute;
@@ -46,7 +63,7 @@ private _action = [
             }, [], 8] call CBA_fnc_waitAndExecute;
         }, [], 8] call CBA_fnc_waitAndExecute;
     },
-    {isNil "grad_uploadDone" && {isNil "grad_serverDestroyed"} && {!(isNil "grad_serverStarted")}},
+    {isNil "grad_uploadDone" && {isNil "grad_serverDestroyed"} && {!(isNil "grad_serverStarted")} && {grad_serverStarted}},
     {},
     [],
     [0,0,0]

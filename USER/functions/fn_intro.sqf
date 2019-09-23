@@ -129,7 +129,7 @@ ace_player switchMove "amovpercmstpslowwrfldnon";
 
                                                 [{
                                                     [
-                                                        parseText "<t font='PuristaBold' size='6' color='#8b0000'>O</t><t font='PuristaBold' size='6' color='#ffffff'>peration </t><t font='PuristaBold' size='6' color='#8b0000'>L</t><t font='PuristaBold' size='6' color='#ffffff'>ions </t><t font='PuristaBold' size='6' color='#8b0000'>K</t><t font='PuristaBold' size='6' color='#ffffff'>iss</t>",
+                                                        parseText "<t font='PuristaBold' size='7' color='#8b0000'>O</t><t font='PuristaBold' size='7' color='#ffffff'>peration </t><t font='PuristaBold' size='7' color='#8b0000'>L</t><t font='PuristaBold' size='7' color='#ffffff'>ions </t><t font='PuristaBold' size='7' color='#8b0000'>K</t><t font='PuristaBold' size='7' color='#ffffff'>iss</t>",
                                                         [
                                                               safezoneX + 0.25 * safezoneW,
                                                               safezoneY + 0.44 * safezoneH,
